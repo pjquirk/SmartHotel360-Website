@@ -14,5 +14,8 @@ variables:
   dockerfile: '/Source/SmartHotel360.Website/Dockerfile'
 
 steps:
+- script: env
+  displayName: Show environment
+
 - script: docker build -f $(dockerfile) -t $(imageName) .
   displayName: 'docker build'
