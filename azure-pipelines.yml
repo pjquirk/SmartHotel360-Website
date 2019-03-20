@@ -11,7 +11,7 @@ pool:
 
 variables:
   imageName: 'your-container-image-name:$(build.buildId)'
-  dockerfile: '/Source/SmartHotel360.Website/Dockerfile'
+  dockerfile: '$(Build.SourcesDirectory)/Source/SmartHotel360.Website/Dockerfile'
 
 steps:
 - script: env
