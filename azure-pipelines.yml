@@ -12,10 +12,11 @@ pool:
 variables:
   imageName: 'your-container-image-name:$(build.buildId)'
   dockerfile: '$(Build.SourcesDirectory)/Source/SmartHotel360.Website/Dockerfile'
+  context: '$(Build.SourcesDirectory)/Source/SmartHotel360.Website'
 
 steps:
 - script: env
   displayName: Show environment
 
-- script: docker build -f $(dockerfile) -t $(imageName) .
+- script: docker build -f $(dockerfile) -t $(imageName) $(context)
   displayName: 'docker build'
