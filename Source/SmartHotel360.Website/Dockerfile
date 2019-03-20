@@ -4,7 +4,7 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.2.100-preview1-sdk-alpine AS build
 WORKDIR /src
-COPY SmartHotel360.PublicWeb.csproj .
+COPY SmartHotel360.Website.csproj .
 RUN dotnet restore
 COPY . .
 RUN dotnet build -c Release -o /webapp
